@@ -1,0 +1,54 @@
+.item {
+  display: flex;
+  padding: 15px 20px;
+  color: #abb4d2;
+  border-radius: 5px;
+
+  &:hover {
+    background: #36404a;
+    cursor: pointer;
+  }
+}
+
+.image {
+  position: relative;
+  height: fit-content;
+  align-self: center;
+  margin-right: 1rem;
+
+  img {
+    height: 2.2rem;
+    width: 2.2rem;
+    border-radius: 50%;
+  }
+}
+
+.status {
+  width: 10px;
+  height: 10px;
+  background-color: #9aa1b9;
+  border-radius: 50%;
+  border: 2px solid #262e35;
+  position: absolute;
+  right: 0;
+  left: auto;
+  bottom: 0;
+}
+
+.info {
+  flex: 1 1;
+}
+
+.title {
+  font-size: 15px;
+  color: #e1e9f1;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 14px;
+}
+
+.time {
+  font-size: 11px;
+}

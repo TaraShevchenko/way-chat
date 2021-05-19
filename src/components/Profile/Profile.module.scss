@@ -1,0 +1,56 @@
+@import '../../App.module.scss';
+
+.profile {
+  background-color: #303841;
+  min-width: 380px;
+  max-width: 380px;
+}
+
+.title {
+  color: #e1e9f1;
+  font-size: 1.40625rem;
+  font-weight: 600;
+}
+
+.posts {
+  background: #262e35;
+  width: 100%;
+}
+
+.image {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.miniInfo {
+  padding: rem(24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  color: #e1e9f1;
+  font-weight: 600;
+  font-size: rem(16);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  color: #06d6a0;
+  font-size: rem(15);
+  font-weight: 500;
+
+  svg {
+    margin-right: .5em;
+    margin-bottom: .1rem;
+  }
+
+  .textMuted {
+    color: #9aa1b9;
+  }
+
+}

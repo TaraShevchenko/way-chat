@@ -1,0 +1,38 @@
+.search {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+
+
+  span {
+    display: flex;
+    align-items: center;
+    background: #36404a;
+    color: #a6b0cf;
+    font-size: 18px;
+    padding: .5rem 1rem;
+  }
+
+  input {
+    background: #36404a;
+    color: #a6b0cf;
+    border: none;
+    padding: .5rem 1rem;
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+
+    &::placeholder {
+      color: #a6b0cf;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
