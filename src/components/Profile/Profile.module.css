@@ -1,0 +1,50 @@
+.profile {
+    color: #000;
+}
+
+.profileBackground {
+    width: 100%;
+    object-fit: cover;
+}
+
+.desc {
+    display: flex;
+}
+
+.desc__img {
+    margin-right: 10px;
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+textarea {
+    max-height: 100px;
+}
+
+.post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.post:last-child {
+    margin-bottom: 0;
+}
+
+.post img {
+    height: 50px;
+    border-radius: 50%;
+}

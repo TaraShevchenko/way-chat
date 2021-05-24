@@ -15,6 +15,21 @@
 .posts {
   background: #262e35;
   width: 100%;
+  height: calc(100vh - 189px);
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #262e35;
+
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #36404a;
+    border-radius: 5px;
+  }
 }
 
 .image {

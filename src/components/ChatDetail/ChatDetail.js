@@ -3,6 +3,7 @@ import send from './Assets/right-arrow.svg'
 
 import ChatHeader from "./ChatHeader/ChatHeader";
 import Message from "./Message/Message";
+import EntryField from "./EntryField/EntryField";
 
 const ChatDetail = () => {
     return (
@@ -17,15 +18,8 @@ const ChatDetail = () => {
                 <Message />
             </div>
 
-            <div className={`${x.block} p-3 p-lg-4`}>
+            <EntryField placeholder="Send message.." />
 
-                <input placeholder="Send message.." className={x.sendInput} type="text"/>
-
-                <button className={x.sendMessage}>
-                    <img src={send} alt="send"/>
-                </button>
-
-            </div>
         </div>
     )
 }

@@ -1,13 +1,12 @@
 import x from './СhatListItem.module.scss'
+import Ava from "../Ava/Ava";
 
 const СhatListItem = () => {
     return (
         <div className={x.item}>
 
-            <div className={x.image}>
-                <img src="http://chatvia-dark.react.themesbrand.com/static/media/avatar-2.feb0f89d.jpg" alt="ava"/>
-                <span className={x.status}>  </span>
-            </div>
+            <Ava statusColor="#9aa1b9"
+                    image="http://chatvia-dark.react.themesbrand.com/static/media/avatar-2.feb0f89d.jpg"/>
 
             <div className={x.info}>
                 <div className={x.title}>Test</div>

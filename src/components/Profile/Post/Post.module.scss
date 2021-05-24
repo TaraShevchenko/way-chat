@@ -1,0 +1,63 @@
+@import "../../../App.module.scss";
+
+.post {
+  margin: 50px auto 25px;
+  width: 90%;
+  padding: 25px;
+  background: #303841;
+  border-radius: 5px;
+}
+
+
+.postAuthor {
+  font-size: rem(14);
+  font-weight: 600;
+  color: #e1e9f1;
+}
+
+.postDate {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  margin-top: 2px;
+  color: #e1e9f1;
+
+  svg {
+    margin-right: 5px;
+  }
+}
+
+.postContent {
+  margin: 10px 0;
+}
+
+.postContentText {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.postContentImage {
+  img {
+    max-height: 500px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.postButton {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  cursor: pointer;
+  color: #e1e9f1;
+  svg {
+    margin-right: 5px;
+  }
+}
+
+.postDislike {
+  svg {
+    transform: rotate(180deg);
+  }
+}

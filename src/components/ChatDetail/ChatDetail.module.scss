@@ -1,3 +1,4 @@
+@import "../../App.module.scss";
 .chatDetail {
   background: #262e35;
   width: 100%;
@@ -7,11 +8,6 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #36404a;
-
-  &:last-child {
-    border: none;
-    border-top: 1px solid #36404a;
-  }
 }
 
 .content {
@@ -20,7 +16,6 @@
   display: flex;
   flex-direction: column-reverse;
   padding: 0 24px;
-
   &::-webkit-scrollbar {
     width: 8px;
   }

@@ -1,0 +1,41 @@
+.image {
+  position: relative;
+  height: fit-content;
+  align-self: center;
+  margin-right: 1rem;
+  width: fit-content;
+
+  img {
+    height: 2.2rem;
+    width: 2.2rem;
+    border-radius: 50%;
+  }
+}
+
+.status {
+  width: 10px;
+  height: 10px;
+  background-color: #9aa1b9;
+  border-radius: 50%;
+  border: 2px solid #262e35;
+  position: absolute;
+  right: 0;
+  left: auto;
+  bottom: 0;
+}
+
+.styledOverflow {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #262e35;
+
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #36404a;
+    border-radius: 5px;
+  }
+}

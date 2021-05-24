@@ -1,0 +1,50 @@
+@import '../../../App.module.scss';
+
+.accordion-item {
+  border-color: #36404a;
+  background: #36404a;
+  margin-bottom: .75rem;
+}
+
+.accordion-button {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #36404a;
+  border-color: #36404a;
+  color: #e1e9f1;
+  font-weight: 600;
+
+  &:after {
+    width: rem(10);
+    height: rem(10);
+    background-size: rem(10);
+    transform: rotate(-90deg);
+    background-image: url(Assets/Arrow.svg) !important;
+  }
+
+  &:not(.collapsed) {
+    background-color: #36404a;
+    border-color: #36404a;
+    color: #e1e9f1;
+    font-weight: 600;
+  }
+}
+
+.accordion-child {
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.accordion-child-mutedText {
+  color: #9aa1b9;
+  margin-bottom: .25rem;
+  font-size: rem(14);
+}
+
+.accordion-child-normalText {
+  font-size: rem(14);
+  line-height: 1.2;
+  color: #e1e9f1;
+  font-weight: 600;
+}
