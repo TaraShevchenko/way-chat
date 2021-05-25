@@ -1,15 +1,13 @@
 import x from "../Navigation.module.scss";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {useState} from "react";
 
-const NavigationItem = ({image, title, activeItem, onClick, index}) => {
-
-
+const NavigationItem = ({image, title}) => {
 
     return (
-        <Link onClick={() => onClick(index)} to={`/${title}`} className={`${x.navigationItem} ${index === activeItem ? x.active : ''}`}>
+        <NavLink activeClassName={x.active} to={`/${title}`} className={x.navigationItem}>
             <img src={image} alt={title}/>
-        </Link>
+        </NavLink>
     )
 }
 

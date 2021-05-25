@@ -7,7 +7,7 @@ import EntryField from "./EntryField/EntryField";
 
 const ChatDetail = () => {
     return (
-        <div className={x.chatDetail}>
+        <div className="content-big">
             <div className={`${x.block} p-3 p-lg-4`}>
 
                 <ChatHeader />

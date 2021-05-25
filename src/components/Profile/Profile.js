@@ -6,7 +6,7 @@ import Accordion from "./Accordion/Accordion";
 const Profile = () => {
     return (
         <>
-            <div className={`${x.profile} px-4 pt-4`}>
+            <div className="content-small">
 
                 <div className="d-flex justify-content-between align-items-center">
                     <div className={x.title}>My Profile</div>
@@ -65,7 +65,7 @@ const Profile = () => {
 
             </div>
             <div>
-                <div className={x.posts}>
+                <div className="content-big">
                     <Post/>
                 </div>
                 <EntryField placeholder="New post.." />

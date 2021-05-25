@@ -11,6 +11,55 @@
     min-height: calc(100vh - 100px);
 }
 
+.content-small {
+    background-color: #303841;
+    min-width: 380px;
+    max-width: 380px;
+    height: calc(100vh - 100px);
+    overflow: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+
+.content-small::-webkit-scrollbar {
+     width: 8px;
+ }
+
+.content-small::-webkit-scrollbar-track {
+     background: #262e35;
+
+ }
+
+.content-small::-webkit-scrollbar-thumb {
+     background: #36404a;
+     border-radius: 5px;
+ }
+
+
+.content-big {
+    background: #262e35;
+    width: 100%;
+    height: calc(100vh - 100px);
+    overflow: auto;
+}
+
+.content-big::-webkit-scrollbar {
+     width: 8px;
+ }
+
+.content-big::-webkit-scrollbar-track {
+     background: #262e35;
+
+ }
+
+.content-big::-webkit-scrollbar-thumb {
+     background: #36404a;
+     border-radius: 5px;
+ }
+
+
 .footer {
     width: 100%;
     height: 50px;

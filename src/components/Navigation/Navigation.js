@@ -9,13 +9,7 @@ import Chat from './Assets/Images/Chat.svg';
 
 const Navigation = () => {
 
-    const [activeItem, setActiveItem] = useState(0);
-
-    const onLinkClick = (index) => {
-        setActiveItem(index);
-    }
-
-    const menuItems = [
+    const NavigationItems = [
         {
             title: 'Profile',
             image: Profile
@@ -29,13 +23,11 @@ const Navigation = () => {
     return (
 
         <div className={x.navigation}>
-            {menuItems.map((item, index) =>
-                <NavigationItem onClick={() => onLinkClick(index)}
-                                key={index}
+            {NavigationItems.map((item, index) =>
+                <NavigationItem key={index}
                                 index={index}
                                 image={item.image}
                                 title={item.title}
-                                activeItem={activeItem}
                 />)}
         </div>
     )

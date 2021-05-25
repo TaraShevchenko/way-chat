@@ -1,22 +1,15 @@
 import x from './ChatHeader.module.scss'
+import Ava from "../../Chat/Ava/Ava";
 
 const ChatHeader = () => {
     return (
         <>
             <div className={x.user}>
 
-                <img src="http://chatvia-dark.react.themesbrand.com/static/media/avatar-2.feb0f89d.jpg" alt="ava"/>
+                <Ava statusColor="#9aa1b9"
+                     image="http://chatvia-dark.react.themesbrand.com/static/media/avatar-2.feb0f89d.jpg"/>
 
-                <div className={`${x.userName} ms-3 me-1`}>Taras Shevchenko</div>
-
-                <span className={x.userStatus}>
-                    <svg width="10" height="10" fill="currentColor" viewBox="0 0 512 512"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm0 341.332031c-47.0625 0-85.332031-38.269531-85.332031-85.332031s38.269531-85.332031 85.332031-85.332031 85.332031 38.269531 85.332031 85.332031-38.269531 85.332031-85.332031 85.332031zm0 0"/>
-                    </svg>
-                </span>
-
-
+                <div className={x.userName}>Taras Shevchenko</div>
 
             </div>
 

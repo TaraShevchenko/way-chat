@@ -1,4 +1,5 @@
 import x from './App.module.scss';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
@@ -30,7 +31,6 @@ function App() {
 
                     <Route path='/Chat'>
                         <Chat title="Chat"/>
-                        <ChatDetail/>
                     </Route>
 
                 </div>
