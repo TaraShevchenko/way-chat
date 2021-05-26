@@ -1,3 +1,4 @@
+/* eslint-disable */
 import x from './Header.module.scss';
 
 const Header = () => {

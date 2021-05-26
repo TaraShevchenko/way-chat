@@ -2,8 +2,10 @@ import x from './Profile.module.scss';
 import Post from "./Post/Post";
 import EntryField from "../ChatDetail/EntryField/EntryField";
 import Accordion from "./Accordion/Accordion";
+import ProfileInformation from "./ProfileInformation/ProfileInformation";
+import ProfileImage1 from '../../Assets/Profile/ProfileImage1.jpg';
 
-const Profile = () => {
+const Profile = ({Profile}) => {
     return (
         <>
             <div className="content-small">
@@ -20,25 +22,7 @@ const Profile = () => {
                     </div>
                 </div>
 
-                <div className={x.miniInfo}>
-
-                    <img className={x.image}
-                         src="http://chatvia-dark.react.themesbrand.com/static/media/avatar-2.feb0f89d.jpg" alt="ava"/>
-
-                    <div className={x.name}>
-                        Taras Shevchenko
-                    </div>
-
-                    <div className={x.status}>
-                        <svg width="10" height="10" fill="currentColor" viewBox="0 0 512 512"
-                             xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm0 341.332031c-47.0625 0-85.332031-38.269531-85.332031-85.332031s38.269531-85.332031 85.332031-85.332031 85.332031 38.269531 85.332031 85.332031-38.269531 85.332031-85.332031 85.332031zm0 0"/>
-                        </svg>
-                        <div className={x.textMuted}>Active</div>
-                    </div>
-
-                </div>
+                <ProfileInformation image={ProfileImage1} name="Taras Shevchenko" online="Active"/>
 
                 <div className="p-4">
 
@@ -53,22 +37,25 @@ const Profile = () => {
                         </div>
                     </Accordion>
 
-                    <Accordion title='About' index={2}>
-                        <div className="accordion-child">
-                            <div className="accordion-child-mutedText">Name</div>
-                            <div className="accordion-child-normalText">Taras Shevchenko</div>
-                        </div>
-                    </Accordion>
-
 
                 </div>
 
             </div>
             <div>
-                <div className="content-big">
-                    <Post/>
+                <div className="content-big withEntryField">
+                    {Profile.Posts.map((item, index) => (
+                        <Post key={index}
+                              author={item.author}
+                              authorImage={item.authorImage}
+                              date={item.date}
+                              likes={item.likes}
+                              dislikes={item.dislikes}
+                              text={item.text}
+                              images={item.images}
+                        />
+                    ))}
                 </div>
-                <EntryField placeholder="New post.." />
+                <EntryField placeholder="New post.."/>
             </div>
         </>
     )

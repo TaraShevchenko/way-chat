@@ -5,11 +5,11 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import Chat from "./components/Chat/Chat";
 import Navigation from "./components/Navigation/Navigation";
-import ChatDetail from "./components/ChatDetail/ChatDetail";
 import Profile from "./components/Profile/Profile";
 import Header from "./components/Header/Header";
 
 import {BrowserRouter, Route} from "react-router-dom";
+import state from "./redux/state";
 
 function App() {
     return (
@@ -19,18 +19,14 @@ function App() {
 
                 <div className={x.wrapper}>
 
-                    <Navigation/>
-
-                    <Route path='/' exact>
-                        <Profile />
-                    </Route>
+                    <Navigation NavigationItems={state.Navigation.NavigationItems}/>
 
                     <Route path='/Profile'>
-                        <Profile />
+                        <Profile Profile={state.Profile} />
                     </Route>
 
                     <Route path='/Chat'>
-                        <Chat title="Chat"/>
+                        <Chat Chat={state.Chat} title="Chat"/>
                     </Route>
 
                 </div>

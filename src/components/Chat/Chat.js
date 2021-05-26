@@ -4,7 +4,7 @@ import СhatListItem from "./СhatListItem/СhatListItem";
 import Search from "./Search/Search";
 import ChatDetail from "../ChatDetail/ChatDetail";
 
-const Chat = ({title}) => {
+const Chat = ({title, Chat}) => {
     return (
         <>
             <div className="content-small">
@@ -14,7 +14,14 @@ const Chat = ({title}) => {
                 <Search/>
 
                 <div className={x.list}>
-                    <СhatListItem/>
+                    {Chat.ChatList.map( (item, index) => (
+                        <СhatListItem key={index}
+                                      image={item.image}
+                                      name={item.name}
+                                      lastMessage={item.lastMessage}
+                                      lastMessageTime={item.lastMessageTime}
+                        />
+                    ))}
                 </div>
 
             </div>

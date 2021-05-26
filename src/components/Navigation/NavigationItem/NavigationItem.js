@@ -1,12 +1,11 @@
 import x from "../Navigation.module.scss";
 import {NavLink} from "react-router-dom";
-import {useState} from "react";
 
-const NavigationItem = ({image, title}) => {
+const NavigationItem = ({icon, title, href}) => {
 
     return (
-        <NavLink activeClassName={x.active} to={`/${title}`} className={x.navigationItem}>
-            <img src={image} alt={title}/>
+        <NavLink activeClassName={x.active} to={href} className={x.navigationItem}>
+            <img src={icon} alt={title}/>
         </NavLink>
     )
 }
