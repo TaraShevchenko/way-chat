@@ -41,9 +41,47 @@ let state = {
         ChatList: [
             {
                 image: AuthorImage,
-                name: "Taras Shevchenko",
+                name: "Patrick Hendricks",
                 lastMessage: "Hello",
-                lastMessageTime: "03:28"
+                lastMessageTime: "03:28",
+                lastOnlineTime: "03:28",
+                online: true,
+                messages:[
+                    {
+                        text: "Hello, bro",
+                        time: "03:25",
+                        author: "Taras Shevchenko",
+                        authorImage: AuthorImage
+                    },
+                    {
+                        text: "Hello",
+                        time: "03:28",
+                        author: "Patrick Hendricks",
+                        authorImage: AuthorImage
+                    }
+                ]
+            },
+            {
+                image: AuthorImage,
+                name: "Test Test",
+                lastMessage: "Test",
+                lastMessageTime: "te:st",
+                lastOnlineTime: "03:28",
+                online: false,
+                messages:[
+                    {
+                        text: "Test test test test",
+                        time: "03:25",
+                        author: "Test Test",
+                        authorImage: AuthorImage
+                    },
+                    {
+                        text: "Test",
+                        time: "03:28",
+                        author: "Patrick Hendricks",
+                        authorImage: AuthorImage
+                    }
+                ]
             }
         ],
     }

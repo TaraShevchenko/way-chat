@@ -1,10 +1,10 @@
 import x from './СhatListItem.module.scss'
 import Ava from "../Ava/Ava";
+import {NavLink} from "react-router-dom";
 
-const СhatListItem = ({name, image, lastMessage, lastMessageTime}) => {
+const СhatListItem = ({name, image, lastMessage, lastMessageTime, index}) => {
     return (
-        <div className={x.item}>
-
+        <NavLink to={`/Chat/${index}`} className={x.item}>
             <Ava statusColor="#9aa1b9"
                     image={image}/>
 
@@ -14,8 +14,7 @@ const СhatListItem = ({name, image, lastMessage, lastMessageTime}) => {
             </div>
 
             <div className={x.time}>{lastMessageTime}</div>
-        </div>
+        </NavLink>
     )
 }
-
 export default СhatListItem;

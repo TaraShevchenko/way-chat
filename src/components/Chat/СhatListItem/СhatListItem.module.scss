@@ -3,10 +3,17 @@
   padding: 15px 20px;
   color: #abb4d2;
   border-radius: 5px;
+  text-decoration: none;
 
   &:hover {
     background: #36404a;
     cursor: pointer;
+    .title {
+      color: #e1e9f1;
+    }
+    .subtitle, .time {
+      color: #a6b0cf;
+    }
   }
 }
 

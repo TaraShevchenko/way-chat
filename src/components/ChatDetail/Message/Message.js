@@ -1,20 +1,18 @@
 import x from './Message.module.scss';
 
-const Message = () => {
+const Message = ({massage, userName, userImage, name}) => {
     return (
-        <div className={x.myMessage}>
+        <div className={ name === userName ? x.myMessage : x.alienMessage}>
             <div className={x.contentMessage}>
 
-                <img className={x.image}
-                     src="http://chatvia-dark.react.themesbrand.com/static/media/avatar-2.feb0f89d.jpg"
-                     alt=""/>
+                <img className={x.image} src={userImage} alt={userName}/>
 
                 <div className={x.textWrapper}>
                     <div className={x.text}>
-                        Hello, bro.
+                        {massage}
                     </div>
                     <div className={x.name}>
-                        Taras Shevchenko
+                        {userName}
                     </div>
                 </div>
 
@@ -29,5 +27,4 @@ const Message = () => {
         </div>
     )
 }
-
 export default Message;

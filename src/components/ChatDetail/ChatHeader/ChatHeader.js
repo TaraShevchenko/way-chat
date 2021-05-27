@@ -1,16 +1,14 @@
 import x from './ChatHeader.module.scss'
 import Ava from "../../Chat/Ava/Ava";
 
-const ChatHeader = () => {
+const ChatHeader = ({name, image, online}) => {
+
     return (
         <>
             <div className={x.user}>
+                <Ava image={image} online={online}/>
 
-                <Ava statusColor="#9aa1b9"
-                     image="http://chatvia-dark.react.themesbrand.com/static/media/avatar-2.feb0f89d.jpg"/>
-
-                <div className={x.userName}>Taras Shevchenko</div>
-
+                <div className={x.userName}>{name}</div>
             </div>
 
             <div className={x.userActions}>
@@ -25,5 +23,4 @@ const ChatHeader = () => {
         </>
     )
 }
-
 export default ChatHeader;

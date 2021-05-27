@@ -3,8 +3,11 @@ import x from './Chat.module.scss';
 import СhatListItem from "./СhatListItem/СhatListItem";
 import Search from "./Search/Search";
 import ChatDetail from "../ChatDetail/ChatDetail";
+import {Route} from "react-router-dom";
 
 const Chat = ({title, Chat}) => {
+
+
     return (
         <>
             <div className="content-small">
@@ -15,18 +18,30 @@ const Chat = ({title, Chat}) => {
 
                 <div className={x.list}>
                     {Chat.ChatList.map( (item, index) => (
-                        <СhatListItem key={index}
-                                      image={item.image}
-                                      name={item.name}
-                                      lastMessage={item.lastMessage}
-                                      lastMessageTime={item.lastMessageTime}
+                        <СhatListItem
+                            key={index}
+                            index={index}
+                            name={item.name}
+                            image={item.image}
+                            lastMessage={item.lastMessage}
+                            lastMessageTime={item.lastMessageTime}
                         />
                     ))}
                 </div>
 
             </div>
-
-            <ChatDetail/>
+            {Chat.ChatList.map( (item, index) => (
+                <Route path={`/Chat/${index}`}>
+                    <ChatDetail
+                        key={index}
+                        name={item.name}
+                        image={item.image}
+                        online={item.online}
+                        messages={item.messages}
+                        lastOnlineTime={item.lastOnlineTime}
+                    />
+                </Route>
+            ))}
         </>
     )
 }
