@@ -1,11 +1,12 @@
 import x from './ChatDetail.module.scss';
-import {Route} from "react-router-dom";
+import React from "react";
+
 
 import ChatHeader from "./ChatHeader/ChatHeader";
 import Message from "./Message/Message";
 import EntryField from "./EntryField/EntryField";
 
-const ChatDetail = ({online, name, image, messages}) => {
+const ChatDetail = ({online, index, name, image, messages, messageText, onSendClick}) => {
 
     return (
         <div className="content-big">
@@ -17,21 +18,25 @@ const ChatDetail = ({online, name, image, messages}) => {
                 />
             </div>
 
-            <div className={x.content}>
-                {messages.map((item, index) => (
-                    <Message
-                        key={index}
-                        name={name}
-                        massage={item.text}
-                        userName={item.author}
-                        userImage={item.authorImage}
-                    />
-                ))}
+            <div className={x.contentWrapper}>
+                <div className={x.content}>
+                    {messages.map((item, index) => (
+                        <Message
+                            key={index}
+                            name={name}
+                            massage={item.text}
+                            userName={item.author}
+                            userImage={item.authorImage}
+                        />
+                    ))}
 
+                </div>
             </div>
 
-            <EntryField placeholder="Send message.."/>
+            <EntryField index={index} inputRef={messageText} onSendClick={onSendClick} placeholder="Send message.."/>
         </div>
+
+
     )
 }
 

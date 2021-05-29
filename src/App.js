@@ -9,9 +9,8 @@ import Profile from "./components/Profile/Profile";
 import Header from "./components/Header/Header";
 
 import {BrowserRouter, Route} from "react-router-dom";
-import state from "./redux/state";
 
-function App() {
+function App({state, addMessage, addPost}) {
     return (
         <BrowserRouter>
             <div className={x.App}>
@@ -22,11 +21,11 @@ function App() {
                     <Navigation NavigationItems={state.Navigation.NavigationItems}/>
 
                     <Route path='/Profile'>
-                        <Profile Profile={state.Profile} />
+                        <Profile Profile={state.Profile} addPost={addPost} />
                     </Route>
 
                     <Route path='/Chat'>
-                        <Chat Chat={state.Chat} title="Chat"/>
+                        <Chat Chat={state.Chat} addMessage={addMessage} title="Chat"/>
                     </Route>
 
                 </div>

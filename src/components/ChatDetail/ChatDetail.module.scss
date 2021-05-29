@@ -5,12 +5,12 @@
   border-bottom: 1px solid #36404a;
 }
 
-.content {
+.contentWrapper {
   height: calc(100vh - 280px);
   overflow: auto;
   display: flex;
   flex-direction: column-reverse;
-  padding: 0 24px;
+
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -24,6 +24,12 @@
     background: #36404a;
     border-radius: 5px;
   }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
 }
 
 

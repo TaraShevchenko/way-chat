@@ -1,12 +1,21 @@
 import x from './Chat.module.scss';
 
+import React from 'react';
 import СhatListItem from "./СhatListItem/СhatListItem";
 import Search from "./Search/Search";
 import ChatDetail from "../ChatDetail/ChatDetail";
 import {Route} from "react-router-dom";
+import EntryField from "../ChatDetail/EntryField/EntryField";
 
-const Chat = ({title, Chat}) => {
+const Chat = ({title, Chat, addMessage}) => {
 
+
+    let messageText = React.createRef();
+
+    let onSendClick = (chatId) => {
+        let newMessageText = messageText.current.value;
+        addMessage(chatId, newMessageText);
+    }
 
     return (
         <>
@@ -17,7 +26,7 @@ const Chat = ({title, Chat}) => {
                 <Search/>
 
                 <div className={x.list}>
-                    {Chat.ChatList.map( (item, index) => (
+                    {Chat.ChatList.map((item, index) => (
                         <СhatListItem
                             key={index}
                             index={index}
@@ -30,18 +39,25 @@ const Chat = ({title, Chat}) => {
                 </div>
 
             </div>
-            {Chat.ChatList.map( (item, index) => (
+
+
+            {Chat.ChatList.map((item, index) => (
                 <Route path={`/Chat/${index}`}>
                     <ChatDetail
                         key={index}
                         name={item.name}
+                        index={index}
                         image={item.image}
                         online={item.online}
                         messages={item.messages}
+                        messageText={messageText}
+                        onSendClick={onSendClick}
                         lastOnlineTime={item.lastOnlineTime}
                     />
                 </Route>
             ))}
+
+
         </>
     )
 }

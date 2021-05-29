@@ -4,6 +4,7 @@ import ChatIcon from '../Assets/Navigation/Chat.svg';
 //For Profile
 import PostImage from '../Assets/Profile/PostImage.jpg';
 import AuthorImage from '../Assets/Profile/ProfileImage1.jpg';
+import {rerenderEntireTree} from "../render";
 //For Chat
 
 
@@ -23,10 +24,14 @@ let state = {
         ]
     },
     Profile: {
+        ProfileInfo: {
+            name: 'Taras Shevcheko',
+            image: AuthorImage,
+            age: 21,
+            email: 'TarasShevchenko@gmail.com',
+        },
         Posts: [
             {
-                author: "Taras Shevchenko",
-                authorImage: AuthorImage,
                 date: "13.12.2020",
                 likes: 25000,
                 dislikes: 1000,
@@ -46,7 +51,7 @@ let state = {
                 lastMessageTime: "03:28",
                 lastOnlineTime: "03:28",
                 online: true,
-                messages:[
+                messages: [
                     {
                         text: "Hello, bro",
                         time: "03:25",
@@ -68,7 +73,7 @@ let state = {
                 lastMessageTime: "te:st",
                 lastOnlineTime: "03:28",
                 online: false,
-                messages:[
+                messages: [
                     {
                         text: "Test test test test",
                         time: "03:25",
@@ -86,5 +91,31 @@ let state = {
         ],
     }
 }
+
+export let addMessage = (newMessageText, ChatId) => {
+    state.Chat.ChatList[ChatId].messages.push(
+        {
+            text: newMessageText,
+            time: "te:st",
+            author: "Test Test",
+            authorImage: AuthorImage
+        }
+    )
+    rerenderEntireTree(state);
+}
+
+export let addPost = (newMessageText) => {
+    state.Profile.Posts.push(
+        {
+            date: "13.12.2020",
+            likes: 0,
+            dislikes: 0,
+            text: newMessageText,
+            images: []
+        }
+    )
+    rerenderEntireTree(state);
+}
+
 
 export default state;

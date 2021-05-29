@@ -2,7 +2,7 @@ import x from './Message.module.scss';
 
 const Message = ({massage, userName, userImage, name}) => {
     return (
-        <div className={ name === userName ? x.myMessage : x.alienMessage}>
+        <div className={ name === userName ? x.alienMessage : x.myMessage}>
             <div className={x.contentMessage}>
 
                 <img className={x.image} src={userImage} alt={userName}/>
