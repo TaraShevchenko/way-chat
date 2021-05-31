@@ -1,4 +1,4 @@
-import send from "../Assets/right-arrow.svg";
+import send from "../../Chat/ChatDetail/Assets/right-arrow.svg";
 import x from "./EntryField.module.scss"
 
 const EntryField = ({placeholder, inputRef, onSendClick, index}) => {

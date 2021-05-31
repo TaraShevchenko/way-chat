@@ -3,17 +3,20 @@ import x from './Profile.module.scss';
 import SettingSvg from '../../Assets/Profile/SettingsSvg';
 
 import Post from "./Post/Post";
-import EntryField from "../ChatDetail/EntryField/EntryField";
+import EntryField from "../Indifferent/EntryField/EntryField";
 import Accordion from "./Accordion/Accordion";
 import ProfileInformation from "./ProfileInformation/ProfileInformation";
 
 const Profile = ({Profile, addPost}) => {
 
-    let postText = React.createRef();
+    let messageText = React.createRef();
 
-    let onAddPostClick = () => {
-        let newPostText = postText.current.value;
-        addPost(newPostText);
+    let onSendClick = () => {
+        let newMessageText = messageText.current.value;
+        if (messageText.current.value) {
+            addPost(newMessageText);
+            messageText.current.value = '';
+        }
     }
 
     return (
@@ -64,7 +67,7 @@ const Profile = ({Profile, addPost}) => {
                         />
                     ))}
                 </div>
-                <EntryField inputRef={postText} onSendClick={onAddPostClick}  placeholder="New post.."/>
+                <EntryField inputRef={messageText} onSendClick={onSendClick}  placeholder="New post.."/>
             </div>
         </>
     )

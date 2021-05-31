@@ -1,5 +1,5 @@
 import x from "./Post.module.scss";
-import Ava from "../../Chat/Ava/Ava";
+import Ava from "../../Indifferent/Ava/Ava";
 
 const Post = ({author, date, likes, dislikes, images, authorImage, text}) => {
 

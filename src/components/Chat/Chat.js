@@ -3,18 +3,20 @@ import x from './Chat.module.scss';
 import React from 'react';
 import СhatListItem from "./СhatListItem/СhatListItem";
 import Search from "./Search/Search";
-import ChatDetail from "../ChatDetail/ChatDetail";
+import ChatDetail from "./ChatDetail/ChatDetail";
 import {Route} from "react-router-dom";
-import EntryField from "../ChatDetail/EntryField/EntryField";
+import EntryField from "../Indifferent/EntryField/EntryField";
 
 const Chat = ({title, Chat, addMessage}) => {
-
 
     let messageText = React.createRef();
 
     let onSendClick = (chatId) => {
         let newMessageText = messageText.current.value;
-        addMessage(chatId, newMessageText);
+        if (messageText.current.value) {
+            addMessage(chatId, newMessageText);
+            messageText.current.value = '';
+        }
     }
 
     return (

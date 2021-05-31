@@ -1,5 +1,5 @@
 import x from './СhatListItem.module.scss'
-import Ava from "../Ava/Ava";
+import Ava from "../../Indifferent/Ava/Ava";
 import {NavLink} from "react-router-dom";
 
 const СhatListItem = ({name, image, lastMessage, lastMessageTime, index}) => {
