@@ -11,6 +11,7 @@ import Header from "./components/Header/Header";
 import {BrowserRouter, Route} from "react-router-dom";
 
 function App({state, addMessage, addPost}) {
+
     return (
         <BrowserRouter>
             <div className={x.App}>

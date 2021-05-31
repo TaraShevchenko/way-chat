@@ -92,7 +92,7 @@ let state = {
     }
 }
 
-export let addMessage = (newMessageText, ChatId) => {
+export let addMessage = (ChatId, newMessageText) => {
     state.Chat.ChatList[ChatId].messages.push(
         {
             text: newMessageText,
@@ -101,7 +101,7 @@ export let addMessage = (newMessageText, ChatId) => {
             authorImage: AuthorImage
         }
     )
-    rerenderEntireTree(state);
+    rerenderEntireTree(state, addMessage, addPost);
 }
 
 export let addPost = (newMessageText) => {
@@ -114,7 +114,7 @@ export let addPost = (newMessageText) => {
             images: []
         }
     )
-    rerenderEntireTree(state);
+    rerenderEntireTree(state, addMessage, addPost);
 }
 
 
