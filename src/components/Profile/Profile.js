@@ -7,16 +7,17 @@ import EntryField from "../Indifferent/EntryField/EntryField";
 import Accordion from "./Accordion/Accordion";
 import ProfileInformation from "./ProfileInformation/ProfileInformation";
 
-const Profile = ({Profile, addPost}) => {
+const Profile = ({Profile, addPost, changeNewPostText}) => {
 
     let messageText = React.createRef();
 
+    const newPostText = () => {
+        changeNewPostText(messageText.current.value);
+    }
+
+
     let onSendClick = () => {
-        let newMessageText = messageText.current.value;
-        if (messageText.current.value) {
-            addPost(newMessageText);
-            messageText.current.value = '';
-        }
+        addPost(messageText.current.value);
     }
 
     return (
@@ -25,7 +26,7 @@ const Profile = ({Profile, addPost}) => {
 
                 <div className="d-flex justify-content-between align-items-center">
                     <div className={x.title}>My Profile</div>
-                    <div><SettingSvg /></div>
+                    <div><SettingSvg/></div>
                 </div>
 
                 <ProfileInformation
@@ -67,7 +68,8 @@ const Profile = ({Profile, addPost}) => {
                         />
                     ))}
                 </div>
-                <EntryField inputRef={messageText} onSendClick={onSendClick}  placeholder="New post.."/>
+                <EntryField newText={newPostText} text={Profile.newPostText} inputRef={messageText}
+                            onSendClick={onSendClick} placeholder="New post.."/>
             </div>
         </>
     )

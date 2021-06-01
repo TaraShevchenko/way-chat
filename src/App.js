@@ -10,11 +10,11 @@ import Header from "./components/Header/Header";
 
 import {BrowserRouter, Route} from "react-router-dom";
 
-function App({state, addMessage, addPost}) {
+function App({state, addMessage, addPost, changeNewPostText}) {
 
     return (
         <BrowserRouter>
-            <div className={x.App}>
+            <div>
                 <Header />
 
                 <div className={x.wrapper}>
@@ -22,7 +22,7 @@ function App({state, addMessage, addPost}) {
                     <Navigation NavigationItems={state.Navigation.NavigationItems}/>
 
                     <Route path='/Profile'>
-                        <Profile Profile={state.Profile} addPost={addPost} />
+                        <Profile Profile={state.Profile} addPost={addPost} changeNewPostText={changeNewPostText}/>
                     </Route>
 
                     <Route path='/Chat'>

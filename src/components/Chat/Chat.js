@@ -1,11 +1,12 @@
+import React from 'react';
+import {Route} from "react-router-dom";
+
 import x from './Chat.module.scss';
 
-import React from 'react';
 import СhatListItem from "./СhatListItem/СhatListItem";
 import Search from "./Search/Search";
 import ChatDetail from "./ChatDetail/ChatDetail";
-import {Route} from "react-router-dom";
-import EntryField from "../Indifferent/EntryField/EntryField";
+
 
 const Chat = ({title, Chat, addMessage}) => {
 
