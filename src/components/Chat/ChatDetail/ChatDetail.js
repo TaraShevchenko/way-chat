@@ -5,7 +5,7 @@ import ChatHeader from "./ChatHeader/ChatHeader";
 import Message from "./Message/Message";
 import EntryField from "../../Indifferent/EntryField/EntryField";
 
-const ChatDetail = ({online, index, name, image, messages, messageText, onSendClick}) => {
+const ChatDetail = ({online, index, name, image, messages, messageText, onSendClick, newText, text}) => {
 
     return (
         <div className="content-big">
@@ -32,7 +32,7 @@ const ChatDetail = ({online, index, name, image, messages, messageText, onSendCl
                 </div>
             </div>
 
-            <EntryField index={index} inputRef={messageText} onSendClick={onSendClick} placeholder="Send message.."/>
+            <EntryField index={index} inputRef={messageText} onSendClick={onSendClick} newText={newText} text={text} placeholder="Send message.."/>
         </div>
 
 

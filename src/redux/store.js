@@ -6,6 +6,10 @@ import PostImage from '../Assets/Profile/PostImage.jpg';
 import AuthorImage from '../Assets/Profile/ProfileImage1.jpg';
 //For Chat
 
+//For dispatch
+import profileReducer from "./profileReducer";
+import chatReducer from "./chatReducer";
+import navigationReducer from "./navigationReducer";
 
 let store = {
     _state: {
@@ -52,6 +56,7 @@ let store = {
                     lastMessageTime: "03:28",
                     lastOnlineTime: "03:28",
                     online: true,
+                    newMessageText: '',
                     messages: [
                         {
                             text: "Hello, bro",
@@ -74,6 +79,7 @@ let store = {
                     lastMessageTime: "te:st",
                     lastOnlineTime: "03:28",
                     online: false,
+                    newMessageText: '',
                     messages: [
                         {
                             text: "Test test test test",
@@ -92,47 +98,20 @@ let store = {
             ],
         }
     },
-    _callSubscriber() {},
+    _callSubscriber() {
+    },
 
     subscribe(observer) {
         this._callSubscriber = observer;
     },
     getState() {
-      return this._state;
+        return this._state;
     },
-    addMessage(ChatId, newMessageText) {
-        if (newMessageText) {
-            this._state.Chat.ChatList[ChatId].messages.push(
-                {
-                    text: newMessageText,
-                    time: "te:st",
-                    author: "Test Test",
-                    authorImage: AuthorImage
-                }
-            )
 
-            this._callSubscriber(store.getState());
-        }
-    },
-    addPost() {
-
-        if (this._state.Profile.newPostText) {
-            this._state.Profile.Posts.push(
-                {
-                    date: "13.12.2020",
-                    likes: 0,
-                    dislikes: 0,
-                    text: this._state.Profile.newPostText,
-                    images: []
-                }
-            )
-
-            this._state.Profile.newPostText = '';
-            this._callSubscriber(store.getState());
-        }
-    },
-    changeNewPostText(newPostText) {
-        this._state.Profile.newPostText = newPostText;
+    dispatch(action) {
+        navigationReducer(this._state.Navigation, action);
+        profileReducer(this._state.Profile, action);
+        chatReducer(this._state.Chat, action);
         this._callSubscriber(store.getState());
     }
 }

@@ -26,7 +26,7 @@
   align-items: center;
 }
 
-a.userActionsItem {
+.userActionsItem {
   height: 40px;
   width: 40px;
   display: flex;
@@ -36,6 +36,8 @@ a.userActionsItem {
   cursor: pointer;
   border-radius: 5px;
   transition: all .5s;
+  border: 1px solid transparent;
+  background: transparent;
 
   &:not(:last-child) {
     margin-right: .5rem;

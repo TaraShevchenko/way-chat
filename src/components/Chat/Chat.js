@@ -6,25 +6,27 @@ import x from './Chat.module.scss';
 import СhatListItem from "./СhatListItem/СhatListItem";
 import Search from "./Search/Search";
 import ChatDetail from "./ChatDetail/ChatDetail";
+import {newMessageTextActionCreator, addMessageActionCreator} from "../../redux/chatReducer";
 
 
-const Chat = ({title, Chat, addMessage}) => {
+const Chat = ({title, Chat, dispatch}) => {
 
     let messageText = React.createRef();
 
-    let onSendClick = (chatId) => {
-        let newMessageText = messageText.current.value;
-        if (messageText.current.value) {
-            addMessage(chatId, newMessageText);
-            messageText.current.value = '';
-        }
+    const newMessageText = (chatId) => {
+        let text = messageText.current.value;
+        dispatch(newMessageTextActionCreator(text, chatId));
+    }
+
+    const onSendClick = (chatId) => {
+        dispatch(addMessageActionCreator(chatId))
     }
 
     return (
         <>
             <div className="content-small">
 
-                <div className={`${x.title} mb-4`}>{title}</div>
+                <div className={`${x.title} mb-4`}>Chat</div>
 
                 <Search/>
 
@@ -53,9 +55,11 @@ const Chat = ({title, Chat, addMessage}) => {
                         image={item.image}
                         online={item.online}
                         messages={item.messages}
+                        text={item.newMessageText}
                         messageText={messageText}
                         onSendClick={onSendClick}
                         lastOnlineTime={item.lastOnlineTime}
+                        newText={newMessageText}
                     />
                 </Route>
             ))}

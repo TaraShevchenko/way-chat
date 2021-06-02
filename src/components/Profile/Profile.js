@@ -6,18 +6,19 @@ import Post from "./Post/Post";
 import EntryField from "../Indifferent/EntryField/EntryField";
 import Accordion from "./Accordion/Accordion";
 import ProfileInformation from "./ProfileInformation/ProfileInformation";
+import {addPostActionCreator, newPostTextActionCreator} from "../../redux/profileReducer";
 
-const Profile = ({Profile, addPost, changeNewPostText}) => {
+const Profile = ({Profile, dispatch}) => {
 
     let messageText = React.createRef();
 
     const newPostText = () => {
-        changeNewPostText(messageText.current.value);
+        let text = messageText.current.value;
+        dispatch(newPostTextActionCreator(text));
     }
 
-
     let onSendClick = () => {
-        addPost(messageText.current.value);
+        dispatch(addPostActionCreator());
     }
 
     return (
