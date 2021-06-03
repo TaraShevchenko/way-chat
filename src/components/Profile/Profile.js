@@ -8,17 +8,17 @@ import Accordion from "./Accordion/Accordion";
 import ProfileInformation from "./ProfileInformation/ProfileInformation";
 import {addPostActionCreator, newPostTextActionCreator} from "../../redux/profileReducer";
 
-const Profile = ({Profile, dispatch}) => {
+const Profile = ({Profile, onSendClickConnect, newPostTextConnect}) => {
 
     let messageText = React.createRef();
 
     const newPostText = () => {
-        let text = messageText.current.value;
-        dispatch(newPostTextActionCreator(text));
+        debugger;
+        newPostTextConnect(messageText.current.value);
     }
 
-    let onSendClick = () => {
-        dispatch(addPostActionCreator());
+    const onSendClick = () => {
+        onSendClickConnect();
     }
 
     return (

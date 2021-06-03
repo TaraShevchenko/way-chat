@@ -4,13 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import Chat from "./components/Chat/Chat";
-import Navigation from "./components/Navigation/Navigation";
 import Profile from "./components/Profile/Profile";
 import Header from "./components/Header/Header";
 
 import {BrowserRouter, Route} from "react-router-dom";
+import NavigationContainer from "./components/Navigation/NavigationContainer";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
-function App({state, addMessage, dispatch}) {
+const App = ({state, dispatch}) => {
 
     return (
         <BrowserRouter>
@@ -19,10 +20,10 @@ function App({state, addMessage, dispatch}) {
 
                 <div className={x.wrapper}>
 
-                    <Navigation NavigationItems={state.Navigation.NavigationItems}/>
+                    <NavigationContainer/>
 
                     <Route path='/Profile'>
-                        <Profile Profile={state.Profile} dispatch={dispatch}/>
+                        <ProfileContainer />
                     </Route>
 
                     <Route path='/Chat'>

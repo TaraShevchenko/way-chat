@@ -1,10 +1,9 @@
 import NavigationItem from "./NavigationItem/NavigationItem";
-import x from './Navigation.module.scss'
-
+import x from './Navigation.module.scss';
 
 const Navigation = ({NavigationItems}) => {
-    return (
 
+    return (
         <div className={x.navigation}>
             {NavigationItems.map((item, index) =>
                 <NavigationItem key={index}
