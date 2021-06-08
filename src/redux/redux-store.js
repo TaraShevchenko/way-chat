@@ -10,8 +10,8 @@ const reducers = combineReducers({
     Navigation: navigationReducer
 })
 
-const store = createStore(reducers, /* preloadedState, */  devToolsEnhancer(
-    // Specify custom devTools options
-));
+const store = createStore(reducers);
+
+window.store = store;
 
 export default store;

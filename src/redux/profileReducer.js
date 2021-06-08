@@ -27,24 +27,29 @@ const initialState = {
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST:
-            if (state.newPostText) {
-                state.Posts.push(
-                    {
-                        date: "13.12.2020",
-                        likes: 0,
-                        dislikes: 0,
-                        text: state.newPostText,
-                        images: []
-                    }
-                )
+        case ADD_POST: {
+            let copyState = {...state};
+            copyState.Posts = [...state.Posts];
 
-                state.newPostText = '';
-            }
-            return state;
-        case CHANGE_NEW_POST_TEXT:
-            state.newPostText = action.newPostText;
-            return state;
+            copyState.Posts.push(
+                {
+                    date: "13.12.2020",
+                    likes: 0,
+                    dislikes: 0,
+                    text: copyState.newPostText,
+                    images: []
+                }
+            )
+
+            copyState.newPostText = '';
+
+            return copyState;
+        }
+        case CHANGE_NEW_POST_TEXT: {
+            let copyState = {...state};
+            copyState.newPostText = action.newPostText;
+            return copyState;
+        }
         default:
             return state;
     }
@@ -54,7 +59,6 @@ export const addPostActionCreator = () => ({
     type: ADD_POST
 })
 
-debugger;
 export const newPostTextActionCreator = (text) => ({
     type: CHANGE_NEW_POST_TEXT,
     newPostText: text

@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import Chat from "./components/Chat/Chat";
-import Profile from "./components/Profile/Profile";
 import Header from "./components/Header/Header";
 
 import {BrowserRouter, Route} from "react-router-dom";

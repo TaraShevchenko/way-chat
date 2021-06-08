@@ -11,7 +11,6 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(addPostActionCreator())
     },
     newPostTextConnect: (text) => {
-        debugger;
         dispatch(newPostTextActionCreator(text))
     }
 })

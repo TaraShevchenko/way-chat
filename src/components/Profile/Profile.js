@@ -10,10 +10,10 @@ import {addPostActionCreator, newPostTextActionCreator} from "../../redux/profil
 
 const Profile = ({Profile, onSendClickConnect, newPostTextConnect}) => {
 
+
     let messageText = React.createRef();
 
     const newPostText = () => {
-        debugger;
         newPostTextConnect(messageText.current.value);
     }
 
