@@ -6,6 +6,7 @@ const CHANGE_NEW_MESSAGE_TEXT = 'CHANGE_NEW_MESSAGE_TEXT';
 const initialState = {
     ChatList: [
         {
+            id: 1,
             image: AuthorImage,
             name: "Patrick Hendricks",
             lastMessage: "Hello",
@@ -15,12 +16,14 @@ const initialState = {
             newMessageText: '',
             messages: [
                 {
+                    id: 1,
                     text: "Hello, bro",
                     time: "03:25",
                     author: "Taras Shevchenko",
                     authorImage: AuthorImage
                 },
                 {
+                    id: 2,
                     text: "Hello",
                     time: "03:28",
                     author: "Patrick Hendricks",
@@ -29,6 +32,7 @@ const initialState = {
             ]
         },
         {
+            id: 2,
             image: AuthorImage,
             name: "Test Test",
             lastMessage: "Test",
@@ -38,12 +42,14 @@ const initialState = {
             newMessageText: '',
             messages: [
                 {
+                    id: 1,
                     text: "Test test test test",
                     time: "03:25",
                     author: "Test Test",
                     authorImage: AuthorImage
                 },
                 {
+                    id: 2,
                     text: "Test",
                     time: "03:28",
                     author: "Patrick Hendricks",
@@ -56,23 +62,44 @@ const initialState = {
 
 const chatReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MESSAGE:
-
-            if (state.ChatList[action.ChatId].newMessageText) {
-                state.ChatList[action.ChatId].messages.push(
-                    {
-                        text: state.ChatList[action.ChatId].newMessageText,
-                        time: "te:st",
-                        author: "Test Test",
-                        authorImage: AuthorImage
+        case ADD_MESSAGE: {
+            return {
+                ...state,
+                ChatList: [...state.ChatList.map((item,key) => {
+                    if (action.ChatId === item.id) {
+                        return {
+                            ...item,
+                            newMessageText: '',
+                            messages: [
+                                ...state.ChatList[key].messages,
+                                {
+                                    text: state.ChatList[key].newMessageText,
+                                    time: "te:st",
+                                    author: "Test Test",
+                                    authorImage: AuthorImage
+                                }
+                            ]
+                        }
                     }
-                )
-                state.ChatList[action.ChatId].newMessageText = '';
+                    return item;
+                })]
             }
-            return state;
-        case CHANGE_NEW_MESSAGE_TEXT:
-            state.ChatList[action.ChatId].newMessageText = action.newMessageText;
-            return state;
+        }
+        case CHANGE_NEW_MESSAGE_TEXT: {
+            return {
+                ...state,
+                ChatList: [...state.ChatList.map(item => {
+                    if (action.ChatId === item.id) {
+                        return {
+                            ...item,
+                            newMessageText: action.newMessageText,
+                        }
+                    } else {
+                        return item;
+                    }
+                })]
+            }
+        }
         default:
             return state;
     }

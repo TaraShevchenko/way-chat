@@ -22,7 +22,6 @@
     padding-top: 1.5rem;
 }
 
-
 .content-small::-webkit-scrollbar {
      width: 8px;
  }
@@ -40,8 +39,8 @@
 
 .content-big {
     background: #262e35;
-    width: 100%;
     height: calc(100vh - 100px);
+    width: calc(100vw - 455px);
     overflow: auto;
 }
 

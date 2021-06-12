@@ -1,6 +1,5 @@
 import React from 'react';
 import x from './Profile.module.scss';
-import SettingSvg from '../../Assets/Profile/SettingsSvg';
 
 import Post from "./Post/Post";
 import EntryField from "../Indifferent/EntryField/EntryField";
@@ -27,7 +26,13 @@ const Profile = ({Profile, onSendClickConnect, newPostTextConnect}) => {
 
                 <div className="d-flex justify-content-between align-items-center">
                     <div className={x.title}>My Profile</div>
-                    <div><SettingSvg/></div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             className="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                        </svg>
+                    </div>
                 </div>
 
                 <ProfileInformation

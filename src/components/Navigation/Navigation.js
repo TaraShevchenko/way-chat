@@ -6,10 +6,11 @@ const Navigation = ({NavigationItems}) => {
     return (
         <div className={x.navigation}>
             {NavigationItems.map((item, index) =>
-                <NavigationItem key={index}
-                                icon={item.icon}
-                                title={item.title}
-                                href={item.href}
+                <NavigationItem
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    href={item.href}
                 />)}
 
 

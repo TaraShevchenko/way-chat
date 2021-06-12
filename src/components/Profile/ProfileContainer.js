@@ -8,10 +8,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     onSendClickConnect: () => {
-        dispatch(addPostActionCreator())
+        dispatch(addPostActionCreator());
     },
     newPostTextConnect: (text) => {
-        dispatch(newPostTextActionCreator(text))
+        dispatch(newPostTextActionCreator(text));
     }
 })
 

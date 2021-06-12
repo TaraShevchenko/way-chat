@@ -3,30 +3,41 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-import Chat from "./components/Chat/Chat";
 import Header from "./components/Header/Header";
-
-import {BrowserRouter, Route} from "react-router-dom";
 import NavigationContainer from "./components/Navigation/NavigationContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import ChatContainer from "./components/Chat/ChatContainer";
+import FriendsContainer from "./components/Friends/FriendsContainer";
 
-const App = ({state, dispatch}) => {
+import {BrowserRouter, Route} from "react-router-dom";
+
+
+
+const App = () => {
 
     return (
         <BrowserRouter>
             <div>
-                <Header />
+                <Header/>
 
                 <div className={x.wrapper}>
 
                     <NavigationContainer/>
 
+                    <Route exact path='/'>
+
+                    </Route>
+
                     <Route path='/Profile'>
-                        <ProfileContainer />
+                        <ProfileContainer/>
                     </Route>
 
                     <Route path='/Chat'>
-                        <Chat Chat={state.Chat} dispatch={dispatch}/>
+                        <ChatContainer/>
+                    </Route>
+
+                    <Route path='/Friends'>
+                        <FriendsContainer/>
                     </Route>
 
                 </div>

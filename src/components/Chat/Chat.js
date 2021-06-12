@@ -6,20 +6,19 @@ import x from './Chat.module.scss';
 import СhatListItem from "./СhatListItem/СhatListItem";
 import Search from "./Search/Search";
 import ChatDetail from "./ChatDetail/ChatDetail";
-import {newMessageTextActionCreator, addMessageActionCreator} from "../../redux/chatReducer";
 
 
-const Chat = ({title, Chat, dispatch}) => {
+const Chat = ({Chat, newMessageTextConnect, onSendClickConnect}) => {
 
     let messageText = React.createRef();
 
     const newMessageText = (chatId) => {
         let text = messageText.current.value;
-        dispatch(newMessageTextActionCreator(text, chatId));
+        newMessageTextConnect(text, chatId);
     }
 
     const onSendClick = (chatId) => {
-        dispatch(addMessageActionCreator(chatId))
+        onSendClickConnect(chatId)
     }
 
     return (
@@ -34,7 +33,7 @@ const Chat = ({title, Chat, dispatch}) => {
                     {Chat.ChatList.map((item, index) => (
                         <СhatListItem
                             key={index}
-                            index={index}
+                            id={item.id}
                             name={item.name}
                             image={item.image}
                             lastMessage={item.lastMessage}
@@ -47,11 +46,11 @@ const Chat = ({title, Chat, dispatch}) => {
 
 
             {Chat.ChatList.map((item, index) => (
-                <Route path={`/Chat/${index}`}>
+                <Route path={`/Chat/${item.id}`}>
                     <ChatDetail
                         key={index}
                         name={item.name}
-                        index={index}
+                        id={item.id}
                         image={item.image}
                         online={item.online}
                         messages={item.messages}

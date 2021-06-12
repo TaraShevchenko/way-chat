@@ -4,20 +4,15 @@
   color: #abb4d2;
   border-radius: 5px;
   text-decoration: none;
+  transition: all .2s;
 
   &:hover {
     background: #36404a;
+    color: #abb4d2;
+    transition: all .2s;
     cursor: pointer;
-    .title {
-      color: #e1e9f1;
-    }
-    .subtitle, .time {
-      color: #a6b0cf;
-    }
   }
 }
-
-
 
 .info {
   flex: 1 1;
@@ -27,6 +22,37 @@
   font-size: 15px;
   color: #e1e9f1;
   font-weight: 600;
+}
+
+.titleBig {
+  font-size: 18px;
+  color: #e1e9f1;
+  font-weight: 600;
+}
+
+.buttonGroup {
+  .button {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #abb4d2;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .5s;
+    border: 2px solid #3e4a56;
+    background: transparent;
+
+    &:not(:last-child) {
+      margin-right: .5rem;
+    }
+
+    &:hover {
+      background: #3e4a56;
+      transition: all .5s;
+    }
+  }
 }
 
 .subtitle {
