@@ -1,17 +1,22 @@
 import React from 'react';
-import x from "../Chat/Chat.module.scss";
+import chat from "../Chat/Chat.module.scss";
+import x from "./Friends.module.scss";
 
 import Search from "../Chat/Search/Search";
 import FriendsList from "./FriendsList/FriendsList";
 import PrimaryButton from "../Indifferent/PrimaryButton/PrimaryButton";
+import FriendsGlobalSearch from "./FriendsGlobalSearch/FriendsGlobalSearch";
+
+import {Route} from "react-router-dom";
+
 
 const Friends = () => {
     return (
         <>
-            <div className="content-small">
-                <div className="d-flex justify-content-between align-items-center mb-4">
-                    <div className={`${x.title}`}>Friends</div>
+            <div className="content-small position-relative">
 
+                <div className="d-flex justify-content-between align-items-center mb-4">
+                    <div className={`${chat.title}`}>Friends</div>
                     <PrimaryButton url='/Friends/GlobalSearch'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              className="bi bi-person-plus-fill" viewBox="0 0 16 16">
@@ -21,15 +26,39 @@ const Friends = () => {
                         </svg>
                     </PrimaryButton>
                 </div>
-
                 <Search/>
-
-                <div className={x.list}>
+                <div className={chat.list}>
                     <FriendsList/>
                 </div>
 
+                <Route path='/Friends/my/1'>
+                    <div className={x.profileMin}>
+                        TestMy
+                    </div>
+                </Route>
+
+                <Route path='/Friends/alien/1'>
+                    <div className={x.profileMin}>
+                        TestAlien
+                    </div>
+                </Route>
+
             </div>
-            <div className="content-big">
+            <div className="content-big position-relative">
+
+                <FriendsGlobalSearch/>
+
+                <Route path='/Friends/my/1'>
+                    <div className={x.profileBig}>
+                        TestMy
+                    </div>
+                </Route>
+
+                <Route path='/Friends/alien/1'>
+                    <div className={x.profileBig}>
+                        TestAlien
+                    </div>
+                </Route>
 
             </div>
         </>

@@ -5,6 +5,32 @@
     border-bottom: 1px solid #36404a;
 }
 
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.intro img {
+    width: auto;
+    height: 100px;
+    animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg)
+    }
+    50% {
+        transform: rotate(180deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
 .wrapper {
     display: flex;
     align-items: stretch;

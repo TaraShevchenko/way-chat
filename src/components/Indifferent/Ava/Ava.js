@@ -1,6 +1,6 @@
 import x from "./Ava.module.scss";
 
-const Ava = ({image, online}) => {
+const Ava = ({image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo1Z1vLLKnqj2JdzSrMOv4HFHAXEChQruVHg&usqp=CAU', online}) => {
 
     return (
         <div className={x.image}>

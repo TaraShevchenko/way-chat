@@ -5,7 +5,6 @@ import Post from "./Post/Post";
 import EntryField from "../Indifferent/EntryField/EntryField";
 import Accordion from "./Accordion/Accordion";
 import ProfileInformation from "./ProfileInformation/ProfileInformation";
-import {addPostActionCreator, newPostTextActionCreator} from "../../redux/profileReducer";
 
 const Profile = ({Profile, onSendClickConnect, newPostTextConnect}) => {
 
