@@ -6,6 +6,7 @@
 }
 
 
+
 .intro {
     display: flex;
     align-items: center;
@@ -36,6 +37,29 @@
     align-items: stretch;
     min-height: calc(100vh - 100px);
 }
+
+
+
+.primaryButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 5px;
+    background: #7269ef;
+    color: #fff;
+    transition: all .5s;
+}
+
+.primaryButton:hover {
+    background: #6159cb;
+    color: #fff;
+    transition: all .5s;
+}
+
+
 
 .content-small {
     background-color: #303841;
@@ -87,6 +111,7 @@
      background: #36404a;
      border-radius: 5px;
  }
+
 
 
 .footer {
